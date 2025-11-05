@@ -1,0 +1,23 @@
+{
+  "name": "namaste_react",
+  "version": "1.0.0",
+  "description": "Namaste React Learning",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishanthtnoorithaya/React-HyperPanda.git"
+  },
+  "keywords": [],
+  "author": "Nishanth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nishanthtnoorithaya/React-HyperPanda/issues"
+  },
+  "homepage": "https://github.com/nishanthtnoorithaya/React-HyperPanda#readme",
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  }
+}
