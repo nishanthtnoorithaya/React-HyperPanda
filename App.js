@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 // First React Code. 
 const heading = React.createElement("h1",{id:"heading", class: "header"}, "Namaste React (children)");
 const Root = ReactDOM.createRoot(document.getElementById("root"));

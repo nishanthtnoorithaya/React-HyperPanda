@@ -2,7 +2,6 @@
   "name": "namaste_react",
   "version": "1.0.0",
   "description": "Namaste React Learning",
-  "main": "App.js",
   "scripts": {
     "test": "jest"
   },
@@ -19,5 +18,12 @@
   "homepage": "https://github.com/nishanthtnoorithaya/React-HyperPanda#readme",
   "devDependencies": {
     "parcel": "^2.16.1"
-  }
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
 }

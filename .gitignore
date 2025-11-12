@@ -1,2 +1,5 @@
 /Notes
 /node_modules
+/Assignments
+.parcel-cache
+/dist
