@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Namaste React Learning",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -16,14 +18,14 @@
     "url": "https://github.com/nishanthtnoorithaya/React-HyperPanda/issues"
   },
   "homepage": "https://github.com/nishanthtnoorithaya/React-HyperPanda#readme",
-  "devDependencies": {
-    "parcel": "^2.16.1"
-  },
   "dependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
-  "browserslist":[
+  "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  }
 }

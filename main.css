@@ -1,4 +1,35 @@
-#heading{
-    color: rgb(65, 250, 241);
-    background-color: rgb(15, 16, 17);
+/* Create a Header Component from scratch using Functional Components with JSX:  */
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.Logo-icon{
+    background-color: #219c21;
+    color: #fff;
+    padding: 10px;
+    border-radius: 6px;
+}
+.searchbar{
+    width: 30%;
+    display: flex;
+}
+.searchbar input{
+    appearance: none;
+    border: 2px solid #219c21;
+    border-radius: 20px;
+    width: 100%;
+    height: 50px;
+    padding: 0 10px;
+}
+.user-icon{
+    right: 1rem;
+    position: relative;
+    padding: 13px 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #219c21;
+    border-radius: 50%;
+    border: 1px solid #000;
 }
