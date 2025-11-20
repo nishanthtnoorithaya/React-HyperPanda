@@ -1,4 +1,4 @@
-/* Create a Header Component from scratch using Functional Components with JSX:  */
+/* Create a Header Component from scratch using Functional Components with JSX: 
 .header{
     display: flex;
     justify-content: space-between;
@@ -32,4 +32,39 @@
     background-color: #219c21;
     border-radius: 50%;
     border: 1px solid #000;
+} */
+
+/* Create a Food Application */
+
+.resto-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    align-items: center;
+    border: 1px solid #000;
+}
+.Navbar-container ul {
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+}
+.Navbar-container ul li{
+    font-size: 18px;
+    list-style-type: none;
+    margin: 0 15px;
+}
+.restocard-container{
+    display: flex;
+}
+.card{
+    width: 200px;
+    height: auto;
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    margin: 5px;
+}
+.card img{
+    width: 100%;
+    border-radius: 8px;
 }
