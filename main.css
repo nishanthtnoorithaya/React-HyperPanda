@@ -68,3 +68,6 @@
     width: 100%;
     border-radius: 8px;
 }
+.card .name{
+    font-weight: bold;
+}

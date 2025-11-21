@@ -19,3 +19,6 @@ This is a React Learning Course:
 16. Creating JSON data and Extracting the Data using Props and Using Arguements from Components. 
 17. Looping Using the Map Function. 
 18. Importance of Key While Looping. 
+19. Restructuring our app. Creating Src folder and Component Folders. (Adding all the components to components folder)
+20. import/export from and to the Components and App. (default and Named Import/export). 
+21. Keeping URL and Data in Seperate Folder called (Utils/common/config folders)
