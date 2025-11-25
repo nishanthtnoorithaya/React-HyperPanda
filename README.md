@@ -2,7 +2,7 @@ This is a React Learning Course:
 
 1. Basic Understanding of Creating Elements in HTML,Through JS and in ReactJS.
 2. Installing Parcel Bundler. (npm)
-3. Creating ReactElements and Understanding of Package,json and Package.lock.json. 
+3. Creating ReactElements and Understanding of Package.json and Package.lock.json. 
 4. What is npm and Node Modules.  
 5. Installing React Module. 
 6. Executing/Building Parcel in Local and Produnction Mode. (npx)  
@@ -21,4 +21,17 @@ This is a React Learning Course:
 18. Importance of Key While Looping. 
 19. Restructuring our app. Creating Src folder and Component Folders. (Adding all the components to components folder)
 20. import/export from and to the Components and App. (default and Named Import/export). 
-21. Keeping URL and Data in Seperate Folder called (Utils/common/config folders)
+21. Keeping URL and Data in Seperate Folder called (Utils/common/config folders). 
+22. React Hooks (UseState). (State Vairable) (Super Power Vairable). (This Syntax is actally a Array Destructing Syntax) (Use State returns a Array)
+23. Make a The App dynamically render Data. When we click a button show filtered Data. 
+24. Reconcilation Algorithm (React Fiber). This is Also Called as Virtual DOM. (This is a React Core Algorithm)
+25. Virtual DOM is Finding the Difference between 2 Virtual DOM and Updating Real DOM. This is Why React is So Fast. 
+26. Understanding of Monolith and Micro Service Architecture. 
+27. Two Ways of fetching the Data from Backend. 1. (Load(webpage) - API Call - Render) 2. (Load(webpage) - Render(Skeleton UI) - API Call - Re-render) Way 2 is Preferred Good Way. 
+28. UseEffect Hook (cb Function) -  Rendering Live Data using Fetch Aync Await Promise. 
+29. Data Optional Chaining. 
+30. Conditional Render (ternary Operator)
+31. Shimmer UI (Creating a Skeleton UI before the API data Loads). 
+32. Dive Deep into UseState (Why we need Usestate and Whats the Need) (Example of Login and Logout Toggle). 
+33. Implemented the Search Functionality Filtering by name (UseState Concept). 
+34. Make a Copy of Data using Another State Vairable to keep Original/Main Data Safe. (Avoid Breaking of UI when manipulating direct to Original/Main State Vairable Data)

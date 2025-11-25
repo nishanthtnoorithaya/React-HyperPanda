@@ -1,8 +1,6 @@
+import { useState } from "react";
+
 const Search = () =>{
-    return (
-        <div className="search">
-            Search
-        </div>
-    )
+    {console.log("Namaste React")}
 }
 export default Search;
