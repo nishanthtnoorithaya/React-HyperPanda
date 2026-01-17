@@ -36,13 +36,13 @@ const Body =() =>{
         useEffect(() =>{
             fetchData();
              // Setting interval to know Unmount concept in fn component as in Class based.
-            const timer = setInterval(()=>{
-                console.log("Set Interval")
-            },1000);
-            // Unmount in fn component as in Class based.
-            return ()=> {
-                clearInterval(timer);
-            }
+            // const timer = setInterval(()=>{
+            //     console.log("Set Interval")
+            // },1000);
+            // // Unmount in fn component as in Class based.
+            // return ()=> {
+            //     clearInterval(timer);
+            // }
         },[])
 
         // Useeffect is Called on EveryTime when the Dependency Array Changes/Updates.  

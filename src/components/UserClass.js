@@ -8,6 +8,7 @@ class UserClass extends React.Component{
         console.log("Child Constructor Called")
     // Create state Vairables: 
        this.state = {
+        count:0,
         userInfo: {
             name: "Nishanth",
             location: "Mumbai"
@@ -30,10 +31,10 @@ class UserClass extends React.Component{
 
     }
 
-    componentDidUpdate(prevprops,prevstate){
-        // if(this.state.count != this.Prevstate.count){
-
-        // }
+    componentDidUpdate(prevState){
+        if(this.state.count != prevState.count){
+            console.log("Changes Detected")
+        }
         console.log("ComponentDidUpdate Called")
     }
 
@@ -49,12 +50,11 @@ class UserClass extends React.Component{
         <img src={avatar_url} width="100%" alt="" />
         <h2 className="name">Name: {name}</h2>
         <h3 className="location">Location: {location}</h3>
-        {/* <button  onClick={()=>{
+        <button  onClick={()=>{
             this.setState({
                 count: this.state.count + 1,
-                count1: this.state.count1 + 1,
             })
-        }}> Count Button </button> */}
+        }}> Count Button </button>
     </div>
     }
 }

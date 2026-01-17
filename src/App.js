@@ -128,8 +128,8 @@ const Root = ReactDOM.createRoot(document.getElementById("root"));
 const AppLayout = () =>{
     return (
         <div className="app-container">
-        <RestoHeader />
-        <Outlet />
+            <RestoHeader />
+            <Outlet />
         </div>
     )
 } 
