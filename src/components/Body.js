@@ -19,23 +19,46 @@ const Body =() =>{
 
     const [searchtext, Setsearchtext] = useState("");
 
+    // To Update Data on Scroll.
 
+    const [nextOffset, setNextOffset] = useState("");  // for update API
 
-    // useEffect Hook 
+    // useEffect()
 
-    useEffect(()=>{
-        fetchData();
-    },[])
+    // useEffect Hook This takes Callback Function and Dependency Array. 
+
+    // Useeffect is Called on every Time Component Renders. Note: When No Dependency Array. 
+        // useEffect(() =>{
+        //     console.log("UseEffect Called")
+        // })
+
+        // Useeffect is Called on only one time on Intial. Note: When empty Dependency Array. 
+        useEffect(() =>{
+            fetchData();
+             // Setting interval to know Unmount concept in fn component as in Class based.
+            const timer = setInterval(()=>{
+                console.log("Set Interval")
+            },1000);
+            // Unmount in fn component as in Class based.
+            return ()=> {
+                clearInterval(timer);
+            }
+        },[])
+
+        // Useeffect is Called on EveryTime when the Dependency Array Changes/Updates.  
+        // useEffect(() =>{
+        //     console.log("UseEffect Called")
+        // },[searchtext])
 
     const fetchData = async () => {
-            const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.97530&lng=77.59100&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
-            const json = await data.json();
-            const restaurants =  json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-            SetRestaurantList(restaurants);
-            SetFilteredRestaurant(restaurants);
+        // Add the CorsProxy URL Before to Avoid CORS Issue. 
+        // This is a Swiggy API Url :
+        const data = await fetch("https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8669486&lng=74.882354&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const json = await data.json();
+        const restaurants =  json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants; // Swiggy Data
+        SetRestaurantList(restaurants);
+        SetFilteredRestaurant(restaurants); 
     }
-
-
 
     // Conditional Rendering. (Shimmer UI)
     // if(RestaurantList.length === 0){
@@ -46,9 +69,9 @@ const Body =() =>{
             <div className="search-container">
                 <input type="text" className="search-input" value={searchtext} onKeyUp={()=>{
                     let Filteredinput =  RestaurantList.filter((res)=>(
-                        res.info.name.toLowerCase().includes(searchtext.toLowerCase())
-                   )) 
-                   SetFilteredRestaurant(Filteredinput);
+                        res.info.name.toLowerCase().includes(searchtext.toLowerCase()) || searchtext.includes(res.info.avgRating) || res.info.cuisines.join(" ").toLowerCase().includes(searchtext.toLowerCase()) || res.info.locality.toLowerCase().includes(searchtext.toLowerCase())
+                   ))
+                    SetFilteredRestaurant(Filteredinput);
                 }} onChange={(e)=>{
                     Setsearchtext(e.target.value)
                 }} />
@@ -91,8 +114,8 @@ const Body =() =>{
             >Counter
             </button> */}
             <div className="restocard-container">
-                {FilteredRestaurant.map((resto,index) => (
-                   <Restocards key={index} resData = {resto} /> 
+                {FilteredRestaurant.map((resto) => (
+                   <Restocards key={resto.info.id} resData = {resto} /> 
                 ))}
             </div>
             {/* <div>{number}</div> */}

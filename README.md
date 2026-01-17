@@ -34,4 +34,9 @@ This is a React Learning Course:
 31. Shimmer UI (Creating a Skeleton UI before the API data Loads). 
 32. Dive Deep into UseState (Why we need Usestate and Whats the Need) (Example of Login and Logout Toggle). 
 33. Implemented the Search Functionality Filtering by name (UseState Concept). 
-34. Make a Copy of Data using Another State Vairable to keep Original/Main Data Safe. (Avoid Breaking of UI when manipulating direct to Original/Main State Vairable Data)
+34. Make a Copy of Data using Another State Vairable to keep Original/Main Data Safe. (Avoid Breaking of UI when manipulating direct to Original/Main State Vairable Data).
+35. Understanding of useEffect Logic when there is Dependency Array and Where there is no Dependency Array and When there is no Dependency Array. ( How useEffect will behaves). 
+36. Important Points on UseState (Use this Hooks on the Top of the Components and Dont use inside the Conditional Statements, There wil be Inconstitency )
+37. React Router: Install react router dom and Import some Components like  createBrowserRouter for Router Config, RouterProvider for Rendering the App and Outlet for adding the children Routers upon a Call like "/about", "/contact" and Link to Link onclick nav links like Anchor tag.  
+39. Error page Handling using useRouteError Hook to Display More Info on the Error Page. 
+40. Two types of Routing in Web Application (Client side - Just Loads the Page no N/W Calls are made), (Server side - Makes N/w Calls to server and Server Returns the Router Page). 

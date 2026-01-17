@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 
 const Navbar = () =>{
 
@@ -7,9 +8,9 @@ const Navbar = () =>{
     return (
         <div className="Navbar-container">
             <ul>
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Contact Us</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/contact">Contact Us</Link></li>
                 <li>Cart</li>
                 {/* Updating the State Vairable from Login to Logout  */}
                 {/* <button className="login" onClick={()=>{

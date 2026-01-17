@@ -2,7 +2,7 @@ import {CDN_URL} from "../utils/constants";
 
 const Restocards = (props) => {
     const {resData} = props;
-    const {id,name,cloudinaryImageId,cuisines,avgRating} = resData.info;
+    const {id,name,cloudinaryImageId,cuisines,avgRating,locality} = resData.info;
     return (
         <div className="card">
             {/* <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/" + resData[0].info.cloudinaryImageId} alt="card-image" /> */}
@@ -12,6 +12,7 @@ const Restocards = (props) => {
             <img src={CDN_URL + cloudinaryImageId} alt="card-image" />
             <div className="name">{name}</div>
             <div className="cusinename">{cuisines.join(", ")}</div>
+            <div className="city">{locality}</div>
             <div className="cusinename">{avgRating}</div>
         </div>
     )

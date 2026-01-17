@@ -1,9 +1,16 @@
+// Import React and React Dom from React and React DOM modules. 
 import React from "react";
 import ReactDOM from "react-dom/client";
+// Import Components. 
 import RestoHeader from "./components/Header";
 import Body from "./components/Body";
-
-
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Error  from "./components/Error";
+import RestoMenu from "./components/RestoMenu";
+// This is a Router Components given by React Router Dom. We can config the Routers/Paths in our Project. 
+import {createBrowserRouter, RouterProvider, Outlet } from "react-router";
+ 
 // First React Code. 
 // const heading = React.createElement("h1",{id:"heading", class: "header"}, "Namaste React (children)");
 const Root = ReactDOM.createRoot(document.getElementById("root"));
@@ -117,22 +124,45 @@ const Root = ReactDOM.createRoot(document.getElementById("root"));
 // }
 
 
-// DummyAPI for Food App: 
-
-
-
-
 // Main App Component. 
 const AppLayout = () =>{
     return (
         <div className="app-container">
         <RestoHeader />
-        <Body />
+        <Outlet />
         </div>
     )
 } 
+// Router Config. 
+const appRouter = createBrowserRouter([
+    {
+        path: '/', 
+        element: <AppLayout />,
+        errorElement: <Error />,
+        children: [
+             {
+            path: '/',
+            element: <Body />,
+        },
+        {
+            path: '/about',
+            element: <About />,
+        },
+        {
+            path: '/contact',
+            element: <Contact />,
+        },
+         {
+            path: '/restomenu/:resID',
+            element: <RestoMenu />,
+        },
+    ]
+    },
+])
 
-Root.render(<AppLayout />)
+// Render the Router Provider Component.
+
+Root.render(<RouterProvider router = {appRouter}/>)
 
 
 

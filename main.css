@@ -55,6 +55,10 @@
     list-style-type: none;
     margin: 0 15px;
 }
+.Navbar-container ul li a{
+    text-decoration: none;
+    color: #000;
+}
 .restocard-container,.shimmer-container{
     display: flex;
     flex-wrap: wrap; /* allows cards to wrap to the next line */
@@ -80,7 +84,7 @@
     width: 100%;
     border-radius: 8px;
 }
-.card .name{
+.card .name, .city{
     font-weight: bold;
 }
 .filter-btn{
@@ -124,4 +128,27 @@
 .login:focus{
     background-color: antiquewhite;
     color: #131613;
+}
+/* About User Page  */
+
+.user-card{
+    border: 2px solid #000;
+    background-color: #f9f9f9;
+    width: 250px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+}
+.name{
+    font-size: 20px;
+    color: #219c21;
+}
+
+.location{
+    font-size: 18px;
+    color: #555;
+}
+.contact{
+    font-size: 16px;
+    color: #888;
 }
