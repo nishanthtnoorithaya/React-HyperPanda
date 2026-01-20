@@ -1,5 +1,5 @@
 // Import React and React Dom from React and React DOM modules. 
-import React from "react";
+import React, {lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
 // Import Components. 
 import RestoHeader from "./components/Header";
@@ -8,6 +8,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error  from "./components/Error";
 import RestoMenu from "./components/RestoMenu";
+import Shimmer from "./components/Shimmer";
+
 // This is a Router Components given by React Router Dom. We can config the Routers/Paths in our Project. 
 import {createBrowserRouter, RouterProvider, Outlet } from "react-router";
  
@@ -124,6 +126,10 @@ const Root = ReactDOM.createRoot(document.getElementById("root"));
 // }
 
 
+// Lazy Loading/Dynamic Importing: 
+
+const Grocery = lazy(()=>import("./components/Grocery"));
+
 // Main App Component. 
 const AppLayout = () =>{
     return (
@@ -151,6 +157,10 @@ const appRouter = createBrowserRouter([
         {
             path: '/contact',
             element: <Contact />,
+        },
+        {
+            path: '/grocery',
+            element: <Suspense fallback={<Shimmer></Shimmer>}><Grocery /></Suspense>,
         },
          {
             path: '/restomenu/:resID',

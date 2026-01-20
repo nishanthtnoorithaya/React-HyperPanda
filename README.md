@@ -40,3 +40,15 @@ This is a React Learning Course:
 37. React Router: Install react router dom and Import some Components like  createBrowserRouter for Router Config, RouterProvider for Rendering the App and Outlet for adding the children Routers upon a Call like "/about", "/contact" and Link to Link onclick nav links like Anchor tag.  
 39. Error page Handling using useRouteError Hook to Display More Info on the Error Page. 
 40. Two types of Routing in Web Application (Client side - Just Loads the Page no N/W Calls are made), (Server side - Makes N/w Calls to server and Server Returns the Router Page). 
+41. Concept of useParams Hook to Extract the Id from the data and Loads URL Dynamically also called as Dynamic Routing. 
+42. Keeping the API Url Data in Utils Folder Seprating the API in Different Folder. 
+43. Class Based Component: Basically How component works Constructor,render,Calls API in Mounting Stage. 
+Concept of Child Component and Parent Component. 
+44. Creating Hooks as in Fn Component state Vairables (this.state and this.SetState) and Useffect like fn in class component (directly in componentDidMount method).  
+45. Component Life Cycle (Mounting/Loading Component (componentDidMount) (Calling API), Updating Component (componentDidUpdate) Updating the Component using state Vairable, Removing/Leaving from Component (componentWillUnmount))
+46. Dive deep into each of the Lifecycle. 
+47. Creating Custom Hooks (useRestocards, useOnlineStatus). 
+48. Develop a New Feature Online and Offline using Window Fn Addeventlistener 
+49. Concept of Chunking/Dynamicsplitting,Lazyloading.: Basically splitting up a Large code into a Small bundles. (Makemytrip website Example)
+50. Lazylaoding: Loading the Grocery code On the click only not on load.  
+60. 

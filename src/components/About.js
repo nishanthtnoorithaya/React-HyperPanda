@@ -15,7 +15,7 @@ class About extends React.Component{
     render(){
         console.log("Render Called")
          return(
-            <div className="about">
+            <div className="pt-3">
             <h1>This is About Page</h1>
             <UserClass name = {"1st (class)"} location = {"Mangalore (class)"}/>
         </div>

@@ -9,11 +9,13 @@ const Restocards = (props) => {
             {/* <div className="name">{resData[0].info.name}</div>
             <div className="cusinename">{resData[0].info.cuisines.join(", ")}</div> */}
             {/* Another Method */}
-            <img src={CDN_URL + cloudinaryImageId} alt="card-image" />
-            <div className="name">{name}</div>
-            <div className="cusinename">{cuisines.join(", ")}</div>
-            <div className="city">{locality}</div>
-            <div className="cusinename">{avgRating}</div>
+            <img className="rounded-sm w-100" src={CDN_URL + cloudinaryImageId} alt="card-image" />
+            <div className="pt-1 font-bold">{name}</div>
+            <div className="">{cuisines.join(", ")}</div>
+            <div className="flex justify-between pt-1">
+            <div className="">{locality}</div>
+            <div className="font-medium">{avgRating}</div>
+            </div>
         </div>
     )
 }

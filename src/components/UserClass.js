@@ -1,4 +1,5 @@
 import React from "react";
+// import { GITHUB_URL } from "../utils/constants";
 
 class UserClass extends React.Component{
 
@@ -21,7 +22,8 @@ class UserClass extends React.Component{
     // this.timer = setInterval(()=>{
     //     console.log("Set Interval");
     // },1000)
-        const data = await fetch("https://api.github.com/users/akshaymarch7");
+        // const data = await fetch(GITHUB_URL);
+        const data = await fetch("sadasdadadsads")
         const json = await data.json();
         console.log(json);
         this.setState({
