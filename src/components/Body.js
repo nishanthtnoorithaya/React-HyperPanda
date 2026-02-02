@@ -1,9 +1,10 @@
-import Restocards from "./Restocards"
-import { useState } from "react";
-import Search from "./search";
+import Restocards, {WithPromotedCards} from "./Restocards"
+import { useContext, useState } from "react";
 import Shimmer from "./Shimmer";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useFetchAPI from "../utils/useFetchAPI";
+import { Link, useParams } from "react-router";
+import UserContext from "../utils/UserContext";
 
 // import Data  from "../utils/mockData";
 
@@ -12,6 +13,9 @@ const Body =() =>{
     const [searchtext, Setsearchtext] = useState("");
 
     const {RestaurantList, FilteredRestaurant, SetFilteredRestaurant} = useFetchAPI();
+
+
+    const {resID} = useParams(); 
 
     // let [RestaurantList,SetRestaurantList]= useState(Data)
     // Counter Example Tried.  
@@ -41,12 +45,20 @@ const Body =() =>{
     // if(RestaurantList.length === 0){
     //     return <Shimmer />
     // }
-    return RestaurantList.length === 0 ? <Shimmer /> : (
+
+    const {loggedUser, setUserName} = useContext(UserContext);
+
+    const RestcardPromoted = WithPromotedCards(Restocards);
+    
+    return RestaurantList.length == 0 ? <Shimmer /> : (
             <div className="px-6 py-3">
          <div className="p-2 flex gap-2.5 items-center justify-between">
             <input type="text" className=" w-58 px-1 border-2 rounded-md" placeholder="Search Food, Location, Ratings" value={searchtext} onKeyUp={()=>{
                 let Filteredinput = RestaurantList.filter((res)=>(
-                    res.info.name.toLowerCase().includes(searchtext.toLowerCase()) || searchtext.includes(res.info.avgRating) || res.info.cuisines.join(" ").toLowerCase().includes(searchtext.toLowerCase()) || res.info.locality.toLowerCase().includes(searchtext.toLowerCase())
+                    res.info.name.toLowerCase().includes(searchtext.toLowerCase()) 
+                    || searchtext.includes(res.info.avgRating) 
+                    || res.info.cuisines.join(" ").toLowerCase().includes(searchtext.toLowerCase()) 
+                    || res.info.locality.toLowerCase().includes(searchtext.toLowerCase())
                 ))
                 SetFilteredRestaurant(Filteredinput);
                 }} onChange={(e)=>{
@@ -61,14 +73,17 @@ const Body =() =>{
             <button className="button h-10" onClick={()=>{
                 let Filtered = RestaurantList.filter((res) =>(
                 res.info.avgRating > 4.5
-            ));
+            )); 
 
             SetFilteredRestaurant(Filtered);
 
             }}
             >Top Rated Restuarant
             </button>
+            <input className="border border-black" type="text" 
+            value = {loggedUser} onChange={(e) => setUserName(e.target.value)} />
             </div>
+
             {/* <div className="restocard-container">
                     <Restocards resName = "Meghana Food" 
                         cusine = "South Indian, North Indian"
@@ -91,9 +106,12 @@ const Body =() =>{
             }}
             >Counter
             </button> */}
-            <div className="flex flex-wrap gap-2.5">
+            
+            <div className="flex flex-wrap justify-between">
                 {FilteredRestaurant.map((resto) => (
-                   <Restocards key={resto.info.id} resData = {resto} />
+                    <Link to={"/restomenu/"+ resto.info.id}  key={resto.info.id} >
+                        {resto.info.avgRating > 4.5 ? (<RestcardPromoted  resData = {resto} />) : (<Restocards resData = {resto} />)}
+                    </Link>
                 ))}
             </div>
             {/* <div>{number}</div> */}

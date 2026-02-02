@@ -6,6 +6,7 @@ export const CDN_URL =
 
 export const MENU_URL = 
     "https://corsproxy.io/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.8669486&lng=74.882354&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
+                        
     
 
 // export const GITHUB_URL = "https://api.github.com/users/akshaymarch7";

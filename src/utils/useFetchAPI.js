@@ -30,6 +30,7 @@ const useFetchAPI = () =>{
         const data = await fetch(MENU_URL);
         const json = await data.json();
         const restaurants =  json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants; // Swiggy Data
+        console.log(restaurants);
         SetRestaurantList(restaurants);
         SetFilteredRestaurant(restaurants); 
     }

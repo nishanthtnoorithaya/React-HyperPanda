@@ -17,7 +17,7 @@ class About extends React.Component{
          return(
             <div className="pt-3">
             <h1>This is About Page</h1>
-            <UserClass name = {"1st (class)"} location = {"Mangalore (class)"}/>
+            <UserClass name = {"1st class"} location = {"Mangalore (class)"}/>
         </div>
         )
     }

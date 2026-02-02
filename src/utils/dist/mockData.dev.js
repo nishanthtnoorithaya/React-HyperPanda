@@ -3,13 +3,8 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = void 0;
-
-var _RestoMenu = _interopRequireDefault(require("../components/RestoMenu"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-var Restodata = [{
+exports.data = void 0;
+var data = [{
   "statusCode": 0,
   "data": {
     "statusMessage": "done successfully",
@@ -4622,5 +4617,4 @@ var Restodata = [{
   "deviceId": "3120bc47-7898-a1f3-3d26-c03aebde2e65",
   "csrfToken": "rYVKEeqXUN29-seae8piaUkN-jT041w6ozqCjb1E"
 }];
-var _default = Restodata;
-exports["default"] = _default;
+exports.data = data;

@@ -1,37 +1,41 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Restodata from "../utils/RestoMenuData";
+import RestoCategory from "./RestoCategory";
+import Shimmer from "./Shimmer";
+
 const RestoMenu = ()=>{
 
-    const [Restomenu, SetRestomenu] = useState([]);
+    const [showindex, Setshowindex] = useState();
 
-    useEffect(()=>{
-        fetchMenu();
-    },[])
+    // Toggling the Accordian. 
 
-    const fetchMenu = async () => {
-        // try{
-        //     const res = await fetch(MENU_URL);
-        //     const data = await res.json();
-        //     console.log(res);
-        //     // console.log(res.body);
-        // }
-        // catch(err){
-        //     console.log(err.message)
-        // }
-    }
+    const handleToggle = (index) => {
+        Setshowindex(index);
+    };
+
+    const resinfo = Restodata[0]?.data?.cards[2].card.card; 
+
+    const {name,cuisines} = resinfo.info; 
+    const itemcards =  Restodata[0]?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1].card.card; 
+
+    const category = Restodata[0]?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card.card["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+
     return(
-        <div className="menu">
-        <div className="title">
-            <h1>KFC</h1>
-            <h3>North Indian, South Indian</h3>
-        </div>
-            <ul>
-                <li>Biriyani</li>
-                <li>Masala Dose</li>
-                <li>Cool Drinks</li>
-            </ul>
+        <div className="pt-3 mx-auto text-center">
+            <div className="font-bold pb-1">{name}</div>
+            <div className="font-medium">{cuisines.join(", ")}</div>
+            {category.map((res, index)=>(
+                <RestoCategory key={res.card.card.title} resdata={res.card.card}
+                showitems={index === showindex} 
+                Setshowindex = {()=>handleToggle(index)}
+                />
+            ))}
+            
+            
         </div>
     )
- 
-}
+
+    //    const Menu = json[0]?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c.card.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    }
 
 export default RestoMenu; 

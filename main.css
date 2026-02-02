@@ -3,7 +3,7 @@
 
 @layer components{
     .card{
-        @apply w-60 p-3 bg-pink-100 rounded-lg ;
+        @apply w-74 p-3 bg-pink-100 rounded-lg mt-4;
     }
     .button{
         @apply px-4 cursor-pointer bg-gray-700 text-amber-50 p-2 rounded-md items-center;

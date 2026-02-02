@@ -51,4 +51,11 @@ Concept of Child Component and Parent Component.
 48. Develop a New Feature Online and Offline using Window Fn Addeventlistener 
 49. Concept of Chunking/Dynamicsplitting,Lazyloading.: Basically splitting up a Large code into a Small bundles. (Makemytrip website Example)
 50. Lazylaoding: Loading the Grocery code On the click only not on load.  
-60. 
+60. Higher Order Components (Passing components to another component and Enhance that Component and Return it)
+61. Created a Accordian in Menu Details Page. (Dealing with Data Layer.)
+62. Added React Dev Tools to chrome and Seen Profiler other features. 
+63.  Controlled and Uncontrolled Components. (Passing state from Different Component to control the component basically Lifting the State.)
+64. Props Drilling. 
+65. Use Context. (Create Context, Use Context, useContext.provider )
+66. Redux. (Redux Store, Slice, Dispatch action, Reducer Function, Selector, Subscribe to store (Developed the Cart Fetaure), ConfigureStore, Current, CreateSlice, Provider). 
+67. 

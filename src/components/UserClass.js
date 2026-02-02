@@ -1,5 +1,8 @@
 import React from "react";
+import UserContext from "../utils/UserContext";
+
 // import { GITHUB_URL } from "../utils/constants";
+
 
 class UserClass extends React.Component{
 
@@ -50,7 +53,11 @@ class UserClass extends React.Component{
         const {name,location,avatar_url} = this.state.userInfo;
     return <div className="user-card">
         <img src={avatar_url} width="100%" alt="" />
-        <h2 className="name">Name: {name}</h2>
+         <UserContext.Consumer>{({loggedUser})=>
+            <h3>{loggedUser}</h3>
+        }</UserContext.Consumer>
+
+        {/* <h2 className="name">Name: {name}</h2> */}
         <h3 className="location">Location: {location}</h3>
         <button  onClick={()=>{
             this.setState({

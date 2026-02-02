@@ -1,5 +1,5 @@
 // Import React and React Dom from React and React DOM modules. 
-import React, {lazy, Suspense} from "react";
+import React, {lazy, Suspense, useEffect, useState} from "react";
 import ReactDOM from "react-dom/client";
 // Import Components. 
 import RestoHeader from "./components/Header";
@@ -9,9 +9,13 @@ import Contact from "./components/Contact";
 import Error  from "./components/Error";
 import RestoMenu from "./components/RestoMenu";
 import Shimmer from "./components/Shimmer";
-
+import UserContext from "./utils/UserContext";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 // This is a Router Components given by React Router Dom. We can config the Routers/Paths in our Project. 
 import {createBrowserRouter, RouterProvider, Outlet } from "react-router";
+import Cart from "./components/Cart";
+
  
 // First React Code. 
 // const heading = React.createElement("h1",{id:"heading", class: "header"}, "Namaste React (children)");
@@ -132,10 +136,24 @@ const Grocery = lazy(()=>import("./components/Grocery"));
 
 // Main App Component. 
 const AppLayout = () =>{
+
+    const [userName, setUserName] = useState()
+
+    useEffect(()=>{
+        const data = {
+            Name : "Akshay Saini",
+        }
+        setUserName(data.Name);
+    },[])
+
     return (
         <div className="app-container">
+        <Provider store={appStore}>
+        <UserContext.Provider value={{loggedUser: userName, setUserName}}>
             <RestoHeader />
             <Outlet />
+        </UserContext.Provider>
+        </Provider>
         </div>
     )
 } 
@@ -166,6 +184,10 @@ const appRouter = createBrowserRouter([
             path: '/restomenu/:resID',
             element: <RestoMenu />,
         },
+         {
+            path: '/cart',
+            element: <Cart />,
+        }
     ]
     },
 ])
